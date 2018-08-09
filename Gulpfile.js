@@ -21,16 +21,10 @@ var config = {
   }
 };
 
-
 gulp.task('sprite-page', function() {
   return gulp.src('svg/**/*.svg')
     .pipe(svgSprite(config))
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('sprite-shortcut', function() {
-  return gulp.src('sprite/sprite.svg')
-    .pipe(gulp.dest('.'));
-});
-
-gulp.task('default', ['sprite-page', 'sprite-shortcut']);
+gulp.task('default', ['sprite-page']);
